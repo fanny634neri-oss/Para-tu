@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para ti, panzoncin ❤️</title>
+<title>Para ti, panzon ❤️</title>
 
 <style>
 
@@ -76,7 +76,7 @@ h1 {
     box-shadow: 0 15px 40px rgba(120, 50, 90, 0.2);
 }
 
-* BOTÓN *
+/* BOTÓN */
 
 button {
     border: none;
@@ -96,7 +96,7 @@ button:hover {
     background: #c43d70;
 }
 
-* CARTA *
+/* CARTA */
 
 .letter {
     display: none;
@@ -122,7 +122,7 @@ button:hover {
     }
 }
 
-* FIRMA *
+/* FIRMA */
 
 .signature {
     margin-top: 25px;
@@ -130,7 +130,7 @@ button:hover {
     font-weight: bold;
 }
 
-* CORAZONES FLOTANDO *
+/* CORAZONES FLOTANDO */
 
 .floating-heart {
     position: fixed;
@@ -186,7 +186,7 @@ button:hover {
 
     <div class="card">
 
-        <h1>Para ti, Davilululemon </h1>
+        <h1>Para ti, mi chavito</h1>
 
         <p class="subtitle">
             Tengo una pequeña sorpresa para ti...
@@ -199,23 +199,23 @@ button:hover {
         <div class="letter" id="carta">
 
             <p>
-                Panzoncin:
+                Davilulu:
             </p>
 
             <br>
 
             <p>
                 Quería hacerte algo diferente, algo que pudieras
-                guardar y volver a ver cuando quisieras.
+                guardar y volver a ver cuando quisieras y en el momento que quisieras pues
             </p>
 
             <br>
 
             <p>
                 Gracias por todos los momentos que hemos compartido,
-                por las risas, por las conversaciones, por los enojos,
-                por tu cariño y por cada pequeño detalle que hace que estar contigo
-                sea tan especial para mí.
+                por las risas, por las conversaciones, por los enojos, por tu cariño
+                por tus abrazos, por tus besos y por cada pequeño detalle 
+                que hace que estar contigo sea tan especial para mí.
             </p>
 
             <br>
@@ -229,12 +229,11 @@ button:hover {
 
             <p>
                 Espero que cuando la veas puedas sentir aunque sea
-                un poquito de todo el amor que tengo por ti, y que me gusta inovar pues
-                ❤️
+                un poquito de todo el amor que tengo por ti y que me gusta inovar jojo❤️
             </p>
 
             <div class="signature">
-                Con mucho amor, para ti, ailoviuu 💗
+                Con mucho amor, para ti. 💗
             </div>
 
         </div>
@@ -253,7 +252,7 @@ function abrirCarta() {
 
 }
 
-* CREAR CORAZONES *
+/* CREAR CORAZONES */
 
 function crearCorazon() {
 
@@ -261,7 +260,7 @@ function crearCorazon() {
 
     corazon.classList.add("floating-heart");
 
-    const corazones = ["💗"];
+    const corazones = ["❤️", "💕", "💗", "💖", "💘"];
 
     corazon.innerHTML =
         corazones[Math.floor(Math.random() * corazones.length)];
@@ -289,4 +288,3 @@ setInterval(crearCorazon, 700);
 
 </body>
 </html>
-```
