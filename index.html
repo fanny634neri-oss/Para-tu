@@ -1,0 +1,292 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para ti, mi amor ❤️</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: linear-gradient(135deg, #ffd6e7, #f8b8d0, #e9c6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #5a2945;
+}
+
+/* CONTENEDOR */
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    padding: 40px 25px;
+    position: relative;
+    z-index: 2;
+}
+
+/* CORAZÓN PRINCIPAL */
+
+.heart {
+    font-size: 70px;
+    animation: latido 1.5s infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* TITULO */
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+/* TARJETA */
+
+.card {
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(120, 50, 90, 0.2);
+}
+
+/* BOTÓN */
+
+button {
+    border: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    background: #d94f83;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 8px 20px rgba(217,79,131,0.3);
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #c43d70;
+}
+
+/* CARTA */
+
+.letter {
+    display: none;
+    margin-top: 30px;
+    line-height: 1.8;
+    font-size: 18px;
+    animation: aparecer 1s ease;
+}
+
+.letter.show {
+    display: block;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FIRMA */
+
+.signature {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* CORAZONES FLOTANDO */
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    animation: subir linear forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes subir {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .card {
+        padding: 25px 18px;
+    }
+
+    .letter {
+        font-size: 16px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heart">❤️</div>
+
+    <div class="card">
+
+        <h1>Para ti, mi amor</h1>
+
+        <p class="subtitle">
+            Tengo una pequeña sorpresa para ti...
+        </p>
+
+        <button onclick="abrirCarta()">
+            💌 Abrir mi sorpresa
+        </button>
+
+        <div class="letter" id="carta">
+
+            <p>
+                Mi amor:
+            </p>
+
+            <br>
+
+            <p>
+                Quería hacerte algo diferente, algo que pudieras
+                guardar y volver a ver cuando quisieras.
+            </p>
+
+            <br>
+
+            <p>
+                Gracias por todos los momentos que hemos compartido,
+                por las risas, por las conversaciones, por tu cariño
+                y por cada pequeño detalle que hace que estar contigo
+                sea tan especial para mí.
+            </p>
+
+            <br>
+
+            <p>
+                Tal vez esta página sea pequeña, pero está hecha
+                con muchísimo cariño pensando en ti.
+            </p>
+
+            <br>
+
+            <p>
+                Espero que cuando la veas puedas sentir aunque sea
+                un poquito de todo el amor que tengo por ti. ❤️
+            </p>
+
+            <div class="signature">
+                Con mucho amor, para ti. 💗
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function abrirCarta() {
+
+    const carta = document.getElementById("carta");
+
+    carta.classList.toggle("show");
+
+}
+
+/* CREAR CORAZONES */
+
+function crearCorazon() {
+
+    const corazon = document.createElement("div");
+
+    corazon.classList.add("floating-heart");
+
+    const corazones = ["❤️", "💕", "💗", "💖", "💘"];
+
+    corazon.innerHTML =
+        corazones[Math.floor(Math.random() * corazones.length)];
+
+    corazon.style.left =
+        Math.random() * 100 + "vw";
+
+    corazon.style.animationDuration =
+        (4 + Math.random() * 5) + "s";
+
+    corazon.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 9000);
+
+}
+
+setInterval(crearCorazon, 700);
+
+</script>
+
+</body>
+</html>
+```
